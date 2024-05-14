@@ -12,5 +12,7 @@ RUN chmod +x multicast-test-linux-x64
 # SET all interfaces rpfilter to 0
 RUN sysctl -w net.ipv4.conf.all.rp_filter=0
 RUN sysctl -w net.ipv4.conf.default.rp_filter=0
+RUN sysctl -w net.ipv4.conf.net1.rp_filter=0
+
 
 CMD ["tail", "-f", "/dev/null"]
